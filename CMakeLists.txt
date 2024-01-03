@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(LabPro main.cpp
         Date.cpp
-        Date.h)
+        Date.h
+        Activity.h)
