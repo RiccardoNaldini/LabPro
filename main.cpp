@@ -1,11 +1,9 @@
 #include <iostream>
 using namespace std;
+#include "Date.h"
 
-void greet(string& name){
-    cout << "Hello, " << name << "!" << endl;
-}
 
 int main() {
-    greet((string &) "World");
+
     return 0;
 }
