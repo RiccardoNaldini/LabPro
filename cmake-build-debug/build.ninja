@@ -61,6 +61,12 @@ build CMakeFiles/LabPro.dir/Date.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /ho
   OBJECT_DIR = CMakeFiles/LabPro.dir
   OBJECT_FILE_DIR = CMakeFiles/LabPro.dir
 
+build CMakeFiles/LabPro.dir/Record.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Record.cpp || cmake_object_order_depends_target_LabPro
+  DEP_FILE = CMakeFiles/LabPro.dir/Record.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/LabPro.dir
+  OBJECT_FILE_DIR = CMakeFiles/LabPro.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LabPro
@@ -69,7 +75,7 @@ build CMakeFiles/LabPro.dir/Date.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /ho
 #############################################
 # Link the executable LabPro
 
-build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o
+build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o CMakeFiles/LabPro.dir/Record.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/LabPro.dir
   POST_BUILD = :
