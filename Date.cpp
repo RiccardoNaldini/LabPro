@@ -52,3 +52,26 @@ bool Date::operator==(const Date &right) const {
         equal=true;
     return equal;
 }
+
+bool Date::operator>(const Date &right) const {
+    bool greater = false;
+    if(year > right.year)
+        greater = true;
+    else if(year == right.year) {
+        if(month > right.month)
+            greater = true;
+        else if(month == right.month){
+            if(day > right.day)
+                greater = true;
+        }
+    }
+    return greater;
+}
+
+
+bool Date::operator!=(const Date &right) const {
+    bool different=false;
+    if(day!=right.day || month!=right.month || year!=right.year)
+        different=true;
+    return different;
+}

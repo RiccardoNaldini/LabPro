@@ -13,4 +13,4 @@ add_executable(LabPro main.cpp
         Record.cpp
         Record.h)
 
-target_link_libraries(untitled ${CURSES_LIBRARIES})
+target_link_libraries(LabPro ${CURSES_LIBRARIES})
