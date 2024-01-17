@@ -47,7 +47,7 @@ cmake_ninja_workdir = /home/riccardo/CLionProjects/LabPro/cmake-build-debug/
 #############################################
 # Order-only phony target for LabPro
 
-build cmake_object_order_depends_target_LabPro: phony || CMakeFiles/LabPro.dir
+build cmake_object_order_depends_target_LabPro: phony || cmake_object_order_depends_target_core
 
 build CMakeFiles/LabPro.dir/main.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /home/riccardo/CLionProjects/LabPro/main.cpp || cmake_object_order_depends_target_LabPro
   DEP_FILE = CMakeFiles/LabPro.dir/main.cpp.o.d
@@ -75,14 +75,51 @@ build CMakeFiles/LabPro.dir/Record.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /
 #############################################
 # Link the executable LabPro
 
-build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o CMakeFiles/LabPro.dir/Record.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so
+build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o CMakeFiles/LabPro.dir/Record.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so libcore.a || libcore.a
   FLAGS = -g
-  LINK_LIBRARIES = -lcurses  /usr/lib/x86_64-linux-gnu/libform.so
+  LINK_LIBRARIES = -lcurses  /usr/lib/x86_64-linux-gnu/libform.so  libcore.a
   OBJECT_DIR = CMakeFiles/LabPro.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = LabPro
   TARGET_PDB = LabPro.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target core
+
+
+#############################################
+# Order-only phony target for core
+
+build cmake_object_order_depends_target_core: phony || CMakeFiles/core.dir
+
+build CMakeFiles/core.dir/Date.cpp.o: CXX_COMPILER__core_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Date.cpp || cmake_object_order_depends_target_core
+  DEP_FILE = CMakeFiles/core.dir/Date.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/core.dir
+  OBJECT_FILE_DIR = CMakeFiles/core.dir
+
+build CMakeFiles/core.dir/Record.cpp.o: CXX_COMPILER__core_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Record.cpp || cmake_object_order_depends_target_core
+  DEP_FILE = CMakeFiles/core.dir/Record.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/core.dir
+  OBJECT_FILE_DIR = CMakeFiles/core.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target core
+
+
+#############################################
+# Link the static library libcore.a
+
+build libcore.a: CXX_STATIC_LIBRARY_LINKER__core_Debug CMakeFiles/core.dir/Date.cpp.o CMakeFiles/core.dir/Record.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/core.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libcore.a
+  TARGET_PDB = core.a.dbg
 
 
 #############################################
@@ -110,6 +147,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build core: phony libcore.a
+
 # =============================================================================
 # Folder targets.
 
@@ -118,7 +157,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/riccardo/CLionProjects/LabPro/cmake-build-debug
 
-build all: phony LabPro
+build all: phony LabPro libcore.a
 
 # =============================================================================
 # Built-in targets
