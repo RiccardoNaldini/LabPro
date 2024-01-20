@@ -519,3 +519,34 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "test/lib/googletest/cmake/internal_utils.cmake:55 (find_package)"
+      - "test/lib/googletest/CMakeLists.txt:71 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/riccardo/CLionProjects/LabPro/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JwhdAf"
+      binary: "/home/riccardo/CLionProjects/LabPro/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JwhdAf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/riccardo/CLionProjects/LabPro/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JwhdAf'
+        
+        Run Build Command(s): /home/riccardo/opt/clion-2023.3/bin/ninja/linux/x64/ninja -v cmTC_00824
+        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_00824.dir/src.c.o -c /home/riccardo/CLionProjects/LabPro/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-JwhdAf/src.c
+        [2/2] : && /usr/bin/cc  -rdynamic CMakeFiles/cmTC_00824.dir/src.c.o -o cmTC_00824   && :
+        
+      exitCode: 0
+...

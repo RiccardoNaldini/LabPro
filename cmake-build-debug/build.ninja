@@ -145,9 +145,186 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/riccardo/CLionProjects/LabPro/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target AllTests
+
+
+#############################################
+# Order-only phony target for AllTests
+
+build cmake_object_order_depends_target_AllTests: phony || cmake_object_order_depends_target_core cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build test/CMakeFiles/AllTests.dir/runAllTests.cpp.o: CXX_COMPILER__AllTests_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/runAllTests.cpp || cmake_object_order_depends_target_AllTests
+  DEP_FILE = test/CMakeFiles/AllTests.dir/runAllTests.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest -isystem /home/riccardo/CLionProjects/LabPro/test/lib/googletest/include
+  OBJECT_DIR = test/CMakeFiles/AllTests.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/AllTests.dir
+
+build test/CMakeFiles/AllTests.dir/DateTest.cpp.o: CXX_COMPILER__AllTests_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/DateTest.cpp || cmake_object_order_depends_target_AllTests
+  DEP_FILE = test/CMakeFiles/AllTests.dir/DateTest.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest -isystem /home/riccardo/CLionProjects/LabPro/test/lib/googletest/include
+  OBJECT_DIR = test/CMakeFiles/AllTests.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/AllTests.dir
+
+build test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o: CXX_COMPILER__AllTests_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/ActivityTest.cpp || cmake_object_order_depends_target_AllTests
+  DEP_FILE = test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest -isystem /home/riccardo/CLionProjects/LabPro/test/lib/googletest/include
+  OBJECT_DIR = test/CMakeFiles/AllTests.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/AllTests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target AllTests
+
+
+#############################################
+# Link the executable test/AllTests
+
+build test/AllTests: CXX_EXECUTABLE_LINKER__AllTests_Debug test/CMakeFiles/AllTests.dir/runAllTests.cpp.o test/CMakeFiles/AllTests.dir/DateTest.cpp.o test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o | test/lib/googletest/libgtestd.a test/lib/googletest/libgtest_maind.a libcore.a test/lib/googletest/libgtestd.a || libcore.a test/lib/googletest/libgtest_maind.a test/lib/googletest/libgtestd.a
+  FLAGS = -g
+  LINK_LIBRARIES = test/lib/googletest/libgtestd.a  test/lib/googletest/libgtest_maind.a  libcore.a  test/lib/googletest/libgtestd.a
+  OBJECT_DIR = test/CMakeFiles/AllTests.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/AllTests
+  TARGET_PDB = AllTests.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test && /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test && /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/riccardo/CLionProjects/LabPro -B/home/riccardo/CLionProjects/LabPro/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/riccardo/CLionProjects/LabPro/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || test/lib/googletest/CMakeFiles/gtest.dir
+
+build test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always  -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest/include -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest
+  OBJECT_DIR = test/lib/googletest/CMakeFiles/gtest.dir
+  OBJECT_FILE_DIR = test/lib/googletest/CMakeFiles/gtest.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library test/lib/googletest/libgtestd.a
+
+build test/lib/googletest/libgtestd.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug test/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = test/lib/googletest/CMakeFiles/gtest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/lib/googletest/libgtestd.a
+  TARGET_PDB = gtestd.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Order-only phony target for gtest_main
+
+build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
+
+build test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always  -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest -isystem /home/riccardo/CLionProjects/LabPro/test/lib/googletest/include
+  OBJECT_DIR = test/lib/googletest/CMakeFiles/gtest_main.dir
+  OBJECT_FILE_DIR = test/lib/googletest/CMakeFiles/gtest_main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Link the static library test/lib/googletest/libgtest_maind.a
+
+build test/lib/googletest/libgtest_maind.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug test/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || test/lib/googletest/libgtestd.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = test/lib/googletest/CMakeFiles/gtest_main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/lib/googletest/libgtest_maind.a
+  TARGET_PDB = gtest_maind.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/lib/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test/lib/googletest && /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/lib/googletest/edit_cache: phony test/lib/googletest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/lib/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test/lib/googletest && /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/riccardo/CLionProjects/LabPro -B/home/riccardo/CLionProjects/LabPro/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/lib/googletest/rebuild_cache: phony test/lib/googletest/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
+build AllTests: phony test/AllTests
+
 build core: phony libcore.a
+
+build gtest: phony test/lib/googletest/libgtestd.a
+
+build gtest_main: phony test/lib/googletest/libgtest_maind.a
+
+build libgtest_maind.a: phony test/lib/googletest/libgtest_maind.a
+
+build libgtestd.a: phony test/lib/googletest/libgtestd.a
 
 # =============================================================================
 # Folder targets.
@@ -157,7 +334,21 @@ build core: phony libcore.a
 #############################################
 # Folder: /home/riccardo/CLionProjects/LabPro/cmake-build-debug
 
-build all: phony LabPro libcore.a
+build all: phony LabPro libcore.a test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test
+
+build test/all: phony test/AllTests test/lib/googletest/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/riccardo/CLionProjects/LabPro/cmake-build-debug/test/lib/googletest
+
+build test/lib/googletest/all: phony test/lib/googletest/libgtestd.a test/lib/googletest/libgtest_maind.a
 
 # =============================================================================
 # Built-in targets
@@ -166,14 +357,14 @@ build all: phony LabPro libcore.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/riccardo/CLionProjects/LabPro/CMakeLists.txt /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindCurses.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/riccardo/CLionProjects/LabPro/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/lib/googletest/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/lib/googletest/cmake/internal_utils.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindCurses.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPythonInterp.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindThreads.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/riccardo/CLionProjects/LabPro/CMakeLists.txt /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindCurses.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake: phony
+build /home/riccardo/CLionProjects/LabPro/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/lib/googletest/CMakeLists.txt /home/riccardo/CLionProjects/LabPro/test/lib/googletest/cmake/internal_utils.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindCurses.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindPythonInterp.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/FindThreads.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-C.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/Linux.cmake /home/riccardo/opt/clion-2023.3/bin/cmake/linux/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.0/CMakeCCompiler.cmake CMakeFiles/3.27.0/CMakeCXXCompiler.cmake CMakeFiles/3.27.0/CMakeSystem.cmake: phony
 
 
 #############################################
