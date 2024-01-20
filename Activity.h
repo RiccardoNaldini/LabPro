@@ -18,7 +18,12 @@ public:
     const string& getStartingTime() const {return startingTime;}
     const string& getEndingTime() const {return endingTime;}
 
-
+    bool operator== (const Activity& right) const{
+        bool equal=false;
+        if(description==right.description and startingTime==right.startingTime and endingTime==right.endingTime)
+            equal=true;
+        return equal;
+    }
 
 private:
     string description;

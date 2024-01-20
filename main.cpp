@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include "Record.h"
+#include <string>
 using namespace std;
 
 void printHorizontally(int row){     //stampa linee orizzontali
@@ -33,7 +34,7 @@ void drawAgenda(){
 
 void showAgenda(Record& r, int currentY, int currentX){    //currentY, currentX := posizione corrente cursore
     drawAgenda();
-    auto dates = r.getDates();           //dates := {date in cui sono impegnato in attività}
+    auto dates = r.getDates();           //dates := #{date in cui sono impegnato in attività}
     int dimDates = dates.size();
     auto currentDate = Date(1, 1, 1);    //Ci servirà nel ciclo (asssegnazione default)
 
@@ -89,7 +90,8 @@ int main(){
     r.addActivity(d1, a1);
 
     r.addActivity(d2, a3);
-  
+    //r.removeActivities(d1);
+    //r.printRecord();
 
 
     initscr();
@@ -176,11 +178,97 @@ int main(){
                 clear();
                 showAgenda(r, 6, 6);
             }
+            else if (choice == 'n'){
+                mvprintw(4, 0, "Vuoi disdire un'attività? [Y/n]: ");
+                choice = getch();
+                if(choice == 'Y'){
+                    Date delD = Date(1, 1, 1);
 
-            else if(choice == 'n')
-                loop = false;         //se lo user ha detto sempre "NO" allora il programma termina
+                    char day1, day2, mo1, mo2, ye1, ye2, ye3, ye4;
+                    mvprintw(8, 0, "in programma per: ");
+
+                    mvprintw(10, 0, "- l'anno: ");
+                    ye1 = getch();
+                    ye2 = getch();
+                    ye3 = getch();
+                    ye4 = getch();
+                    ye1 -= 48;
+                    ye2 -= 48;
+                    ye3 -= 48;
+                    ye4 -= 48;
+                    delD.setYear(ye1*1000 + ye2*100 + ye3*10 + ye4);
+
+                    mvprintw(12, 0, "- il mese: ");
+                    mo1 = getch();
+                    mo2 = getch();
+                    mo1 -= 48;
+                    mo2 -= 48;
+                    if(mo2 == -38){
+                        mo2 = mo1;
+                        mo1 = 0;
+                    }
+                    delD.setMonth(mo1*10 + mo2);
+
+                    mvprintw(14, 0, "- il giorno: ");
+                    day1 = getch();
+                    day2 = getch();
+                    day1 -= 48;
+                    day2 -= 48;
+                    if(day2 == -38){
+                        day2 = day1;
+                        day1 = 0;
+                    }
+                    delD.setDay(day1*10 + day2);
+
+                    auto vDays = r.getDates();
+                    bool itIs = false;                      //controlla se data immessa da user è presente nel registro (altrimenti come si potrebbe eliminarla?)
+                    for(const auto& itr:vDays){
+                        if(itr == delD)
+                            itIs = true;
+                    }
+                    if(!itIs)
+                        mvprintw(16, 0, "Nessuna attività in programma per quella data");
+                    else{
+
+
+                        erase();
+
+                        auto vAct = r.getActivities(delD);   //contiene possibili attività da rimuovere
+                        auto size = vAct.size();
+                        if(size==1){                         //se la dimensione è 1 semplifichiamo il processo
+                            r.removeActivities(delD);
+                        }
+                        else {
+                            auto it = vAct.begin();
+                            r.removeActivities(delD);  //abbiamo rimosso tutte le attività per il giorno delD
+                            int i = 0;
+
+                            while (i != size) {    //ciclo fatto con indice intero e non con it!=vAct.end() fa un ciclo in più
+                                auto descriptionD = vAct[i].getDescription();
+                                mvprintw(i, 0, "Vuoi rimuovere questa attività: %s [Y/n]: ",
+                                         descriptionD.c_str());  //stampa tutte le descrizioni per un dato giorno
+                                choice = getch();
+                                if (choice == 'Y') {
+                                    vAct.erase(it); //cancella l'attività desiderata
+                                } else if (choice == 'n')
+                                    continue;
+                                it++;
+                                i++;
+
+                            }
+                            for (const auto &itr: vAct)
+                                r.addActivity(delD,
+                                              itr);     //inserisce in Agenda gli elementi del giorno delD non eliminati
+                        }
+                        clear();
+                        showAgenda(r, 6, 6);   //mostra agenda modificata
+                    }
+
+                }
+                else if(choice == 'n')
+                    loop = false;         //se lo user ha detto sempre "NO" allora il programma termina
             }
-
+        }
     }while(loop);
 
     getch();
