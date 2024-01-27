@@ -66,7 +66,7 @@ void showAgenda(const Register& r, int currentY, int currentX){    //currentY, c
     }
 }
 
-void updateAgenda(Register& r, const Activity& a, const Date& d){   //Aggiorna l'agenda con una nuova attività e relativa data
+void updateAgenda(Register& r, const Activity& a){   //Aggiorna l'agenda con una nuova attività e relativa data
     r.addActivity(a);
     showAgenda(r, 6, 6);
 
@@ -167,9 +167,11 @@ int main(){
                 }
                 d.setDay(dd1 * 10 + dd2);
 
+                a.setDate(d);
+
 
                 clear();                            //cancella la serie di domande effettuate all'utente dallo schermo
-                updateAgenda(r, a, d);           //mostra la nuova agenda sullo schermo (liberato da clear() precedente)
+                updateAgenda(r, a);           //mostra la nuova agenda sullo schermo (liberato da clear() precedente)
             }catch(out_of_range& e){
                 getch();
                 clear();
