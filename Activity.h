@@ -14,7 +14,11 @@ public:
     void setDescription(const string& d) {description=d;}
     void setStartingTime(const string& st) {startingTime=st;}
     void setEndingTime(const string& en) {endingTime=en;}
-    void setDate(const Date& dt) {date=dt;}
+    void setDate(int day, int month, int year) { //L'ordine di inserimento deve sempre essere anno, mese, giorno per poter correttamente lanciare le eccezioni
+        date.setYear(year);
+        date.setMonth(month);
+        date.setDay(day);
+    }
 
     const string& getDescription() const {return description;}
     const string& getStartingTime() const {return startingTime;}

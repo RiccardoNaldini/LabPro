@@ -25,23 +25,33 @@ vector<Date> Register::getDates() const{
 
 bool Register::removeActivities(const Date &date) {
     auto begin = activities.find(date); //punta al primo elemento con chiave date
-    int size = activities.count(date);// numero di elementi con chiave date
+    int numDate = activities.count(date);// numero di elementi con chiave date
+    int size = activities.size();
     bool removed = false;
 
     auto it = begin;
-    while(size){               //cerca il puntatore all'ultimo elemento con chiave date
+    while(numDate){               //cerca il puntatore all'ultimo elemento con chiave date
         it++;
-        size--;
+        numDate--;
     }
 
     activities.erase(begin, it);     //elimina tutti gli elementi con chiave date
 
-    int checkSize = activities.count(date);
+    int checkSize = activities.size();
 
     if(checkSize < size)
         removed = true;
 
     return removed;
 }
+
+vector<Activity> Register::getAllActivities() const {
+    vector<Activity> v;
+    for(auto const& activity:activities)
+        v.push_back(activity.second);
+    return v;
+}
+
+
 
 

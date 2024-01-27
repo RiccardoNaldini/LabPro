@@ -4,20 +4,23 @@ using namespace std;
 
 void Date::checkDate(const int dd, const int mm, const int yy) const{
     bool leap = false;
-    if(yy%4==0 or (yy%100==0 and yy%400==0))
+
+    if(yy%4==0)
         leap=true;
+    if(yy%100==0 and yy%400!=0)
+        leap = false;
 
     //LANCIA ECCEZIONI QUANDO DATE INSERITE NON SONO VALIDE
-    if(dd<1 || dd>31)
+    if(dd<1 or dd>31)
         throw out_of_range("Giorno inserito non valido");
-    else if(mm<1 || mm>12)
+    else if(mm<1 or mm>12)
         throw out_of_range("Mese inserito non valido");
     else{
         if(mm==2 and dd>29 and leap)
             throw out_of_range("Giorno non valido per Febbraio bisestile");
         if(mm==2 and dd > 28 and !leap)
             throw out_of_range("Giorno non valido per Febbraio non bisestile");
-        if( (mm==4 || mm==6 || mm==9 || mm==11) and dd==31)
+        if( (mm==4 or mm==6 or mm==9 or mm==11) and dd==31)
             throw out_of_range("Giorno 31 non valido per mesi di 30 giorni");
     }
 

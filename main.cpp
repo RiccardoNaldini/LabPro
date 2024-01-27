@@ -87,7 +87,8 @@ int main(){
 
 
 
-    Register r(a2);
+    Register r;
+    r.addActivity(a2);
     r.addActivity(a1);
 
     r.addActivity(a3);
@@ -167,7 +168,7 @@ int main(){
                 }
                 d.setDay(dd1 * 10 + dd2);
 
-                a.setDate(d);
+                a.setDate(d.getDay(), d.getMonth(), d.getYear());
 
 
                 clear();                            //cancella la serie di domande effettuate all'utente dallo schermo

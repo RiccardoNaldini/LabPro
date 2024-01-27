@@ -179,8 +179,8 @@ build test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o: CXX_COMPILER__AllTests_un
   OBJECT_DIR = test/CMakeFiles/AllTests.dir
   OBJECT_FILE_DIR = test/CMakeFiles/AllTests.dir
 
-build test/CMakeFiles/AllTests.dir/RecordTest.cpp.o: CXX_COMPILER__AllTests_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/RecordTest.cpp || cmake_object_order_depends_target_AllTests
-  DEP_FILE = test/CMakeFiles/AllTests.dir/RecordTest.cpp.o.d
+build test/CMakeFiles/AllTests.dir/RegisterFixture.cpp.o: CXX_COMPILER__AllTests_unscanned_Debug /home/riccardo/CLionProjects/LabPro/test/RegisterFixture.cpp || cmake_object_order_depends_target_AllTests
+  DEP_FILE = test/CMakeFiles/AllTests.dir/RegisterFixture.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -I/home/riccardo/CLionProjects/LabPro/test/lib/googletest -isystem /home/riccardo/CLionProjects/LabPro/test/lib/googletest/include
   OBJECT_DIR = test/CMakeFiles/AllTests.dir
@@ -194,7 +194,7 @@ build test/CMakeFiles/AllTests.dir/RecordTest.cpp.o: CXX_COMPILER__AllTests_unsc
 #############################################
 # Link the executable test/AllTests
 
-build test/AllTests: CXX_EXECUTABLE_LINKER__AllTests_Debug test/CMakeFiles/AllTests.dir/runAllTests.cpp.o test/CMakeFiles/AllTests.dir/DateTest.cpp.o test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o test/CMakeFiles/AllTests.dir/RecordTest.cpp.o | test/lib/googletest/libgtestd.a test/lib/googletest/libgtest_maind.a libcore.a test/lib/googletest/libgtestd.a || libcore.a test/lib/googletest/libgtest_maind.a test/lib/googletest/libgtestd.a
+build test/AllTests: CXX_EXECUTABLE_LINKER__AllTests_Debug test/CMakeFiles/AllTests.dir/runAllTests.cpp.o test/CMakeFiles/AllTests.dir/DateTest.cpp.o test/CMakeFiles/AllTests.dir/ActivityTest.cpp.o test/CMakeFiles/AllTests.dir/RegisterFixture.cpp.o | test/lib/googletest/libgtestd.a test/lib/googletest/libgtest_maind.a libcore.a test/lib/googletest/libgtestd.a || libcore.a test/lib/googletest/libgtest_maind.a test/lib/googletest/libgtestd.a
   FLAGS = -g
   LINK_LIBRARIES = test/lib/googletest/libgtestd.a  test/lib/googletest/libgtest_maind.a  libcore.a  test/lib/googletest/libgtestd.a
   OBJECT_DIR = test/CMakeFiles/AllTests.dir

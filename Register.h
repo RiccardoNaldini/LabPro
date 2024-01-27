@@ -14,10 +14,7 @@ using namespace std;
 
 class Register {
 public:
-    explicit Register(const Activity& a){
-        activities.insert(make_pair(a.getDate(), a));
-    }
-
+    Register()=default;
     ~Register()=default;
 
 
@@ -25,6 +22,7 @@ public:
 
 
     vector<Activity> getActivities(const Date& date) const;
+    vector<Activity> getAllActivities() const;
     vector <Date> getDates() const;
 
     bool removeActivities(const Date& date);
