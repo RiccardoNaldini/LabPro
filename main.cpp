@@ -1,6 +1,6 @@
 #include <ncurses.h>
 #include "Register.h"
-#include <string>
+
 using namespace std;
 
 void printHorizontally(int row){     //stampa linee orizzontali
@@ -67,7 +67,7 @@ void showAgenda(const Register& r, int currentY, int currentX){    //currentY, c
 }
 
 void updateAgenda(Register& r, const Activity& a, const Date& d){   //Aggiorna l'agenda con una nuova attività e relativa data
-    r.addActivity(d, a);
+    r.addActivity(a);
     showAgenda(r, 6, 6);
 
 };
@@ -75,21 +75,22 @@ void updateAgenda(Register& r, const Activity& a, const Date& d){   //Aggiorna l
 
 
 int main(){
-
-    Activity a1("Fare spesa", "12:30", "13:00");
-    Activity a2("Dentista", "07:05", "07:15");
-    Activity a3("Allenamento", "19:15", "21:15");
-
-
     Date d1(30, 9, 2023);
     Date d2(28, 2, 2024);
 
+    Activity a1("Fare spesa", "12:30", "13:00", d1);
+    Activity a2("Dentista", "07:05", "07:15", d1);
+    Activity a3("Allenamento", "19:15", "21:15", d2);
 
 
-    Register r(d1, a2);
-    r.addActivity(d1, a1);
 
-    r.addActivity(d2, a3);
+
+
+
+    Register r(a2);
+    r.addActivity(a1);
+
+    r.addActivity(a3);
 
 
     initscr();
@@ -107,8 +108,9 @@ int main(){
         printw("Vuoi aggiungere un'altra attività? [Y/n]: ");
         int choice = getch();                                   //ATTENZIONE: variabile choice usata per entrambe le domande
         if (choice == 'Y') {
-            Activity a("", "", "");
             Date d(1, 1, 1);
+            Activity a("", "", "", d);
+
 
             char descr[25], startTime[8], endTime[8];     //rispettivamente descrizione, tempo inizio e fine della nuova attività da aggiungere
 
@@ -263,8 +265,7 @@ int main(){
 
                                 }
                                 for (const auto &itr: vAct)
-                                    r.addActivity(delD,
-                                                  itr);     //inserisce in Agenda gli elementi del giorno delD non eliminati
+                                    r.addActivity(itr);     //inserisce in Agenda gli elementi del giorno delD non eliminati
                             }
                             clear();
                             showAgenda(r, 6, 6);   //mostra agenda modificata

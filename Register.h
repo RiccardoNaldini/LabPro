@@ -5,7 +5,7 @@
 #include<algorithm>
 #include <iostream>
 #include "Activity.h"
-#include "Date.h"
+
 using namespace std;
 
 
@@ -14,14 +14,14 @@ using namespace std;
 
 class Register {
 public:
-    Register(const Date& date, const Activity& a){
-        activities.insert(make_pair(date, a));
+    explicit Register(const Activity& a){
+        activities.insert(make_pair(a.getDate(), a));
     }
 
     ~Register()=default;
 
 
-    void addActivity(const Date& date, const Activity& a) {activities.insert(make_pair(date, a));}
+    void addActivity(const Activity& a) {activities.insert(make_pair(a.getDate(), a));}
 
 
     vector<Activity> getActivities(const Date& date) const;

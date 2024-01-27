@@ -61,8 +61,8 @@ build CMakeFiles/LabPro.dir/Date.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /ho
   OBJECT_DIR = CMakeFiles/LabPro.dir
   OBJECT_FILE_DIR = CMakeFiles/LabPro.dir
 
-build CMakeFiles/LabPro.dir/Record.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Record.cpp || cmake_object_order_depends_target_LabPro
-  DEP_FILE = CMakeFiles/LabPro.dir/Record.cpp.o.d
+build CMakeFiles/LabPro.dir/Register.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Register.cpp || cmake_object_order_depends_target_LabPro
+  DEP_FILE = CMakeFiles/LabPro.dir/Register.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/LabPro.dir
   OBJECT_FILE_DIR = CMakeFiles/LabPro.dir
@@ -75,7 +75,7 @@ build CMakeFiles/LabPro.dir/Record.cpp.o: CXX_COMPILER__LabPro_unscanned_Debug /
 #############################################
 # Link the executable LabPro
 
-build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o CMakeFiles/LabPro.dir/Record.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so libcore.a || libcore.a
+build LabPro: CXX_EXECUTABLE_LINKER__LabPro_Debug CMakeFiles/LabPro.dir/main.cpp.o CMakeFiles/LabPro.dir/Date.cpp.o CMakeFiles/LabPro.dir/Register.cpp.o | /usr/lib/x86_64-linux-gnu/libcurses.so /usr/lib/x86_64-linux-gnu/libform.so libcore.a || libcore.a
   FLAGS = -g
   LINK_LIBRARIES = -lcurses  /usr/lib/x86_64-linux-gnu/libform.so  libcore.a
   OBJECT_DIR = CMakeFiles/LabPro.dir
@@ -99,8 +99,8 @@ build CMakeFiles/core.dir/Date.cpp.o: CXX_COMPILER__core_unscanned_Debug /home/r
   OBJECT_DIR = CMakeFiles/core.dir
   OBJECT_FILE_DIR = CMakeFiles/core.dir
 
-build CMakeFiles/core.dir/Record.cpp.o: CXX_COMPILER__core_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Record.cpp || cmake_object_order_depends_target_core
-  DEP_FILE = CMakeFiles/core.dir/Record.cpp.o.d
+build CMakeFiles/core.dir/Register.cpp.o: CXX_COMPILER__core_unscanned_Debug /home/riccardo/CLionProjects/LabPro/Register.cpp || cmake_object_order_depends_target_core
+  DEP_FILE = CMakeFiles/core.dir/Register.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/core.dir
   OBJECT_FILE_DIR = CMakeFiles/core.dir
@@ -113,7 +113,7 @@ build CMakeFiles/core.dir/Record.cpp.o: CXX_COMPILER__core_unscanned_Debug /home
 #############################################
 # Link the static library libcore.a
 
-build libcore.a: CXX_STATIC_LIBRARY_LINKER__core_Debug CMakeFiles/core.dir/Date.cpp.o CMakeFiles/core.dir/Record.cpp.o
+build libcore.a: CXX_STATIC_LIBRARY_LINKER__core_Debug CMakeFiles/core.dir/Date.cpp.o CMakeFiles/core.dir/Register.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/core.dir
   POST_BUILD = :
