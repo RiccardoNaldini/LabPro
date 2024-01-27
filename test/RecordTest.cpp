@@ -4,7 +4,7 @@
 
 
 
-/*TEST(Record, constructorTest){
+TEST(Record, constructorTest){
 Date d = Date(1, 1, 1);
 Activity a = Activity("default", "default", "default");
 Record r = Record(d, a);
@@ -54,4 +54,3 @@ TEST(Record, removingTest){
     ASSERT_EQ(d2, dates[0]);
     ASSERT_EQ(a2, acts[0]); 
 }
-*/
