@@ -12,8 +12,8 @@ set(SOURCE_FILES
         Date.cpp
         Date.h
         Activity.h
-        Record.cpp
-        Record.h
+        Register.cpp
+        Register.h
 )
 
 

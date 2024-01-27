@@ -1,5 +1,5 @@
 #include <ncurses.h>
-#include "Record.h"
+#include "Register.h"
 #include <string>
 using namespace std;
 
@@ -32,7 +32,7 @@ void drawAgenda(){
 /////////////////////////////////////////
 }
 
-void showAgenda(Record& r, int currentY, int currentX){    //currentY, currentX := posizione corrente cursore
+void showAgenda(const Register& r, int currentY, int currentX){    //currentY, currentX := posizione corrente cursore
     drawAgenda();
     auto dates = r.getDates();           //dates := #{date in cui sono impegnato in attività}
     int dimDates = dates.size();
@@ -66,7 +66,7 @@ void showAgenda(Record& r, int currentY, int currentX){    //currentY, currentX 
     }
 }
 
-void updateAgenda(Record& r, const Activity& a, const Date& d){   //Aggiorna l'agenda con una nuova attività e relativa data
+void updateAgenda(Register& r, const Activity& a, const Date& d){   //Aggiorna l'agenda con una nuova attività e relativa data
     r.addActivity(d, a);
     showAgenda(r, 6, 6);
 
@@ -76,22 +76,20 @@ void updateAgenda(Record& r, const Activity& a, const Date& d){   //Aggiorna l'a
 
 int main(){
 
-    Activity a1 = Activity("Fare spesa", "12:30", "13:00");
-    Activity a2 = Activity("Dentista", "07:05", "07:15");
-    Activity a3 = Activity("Allenamento", "19:15", "21:15");
+    Activity a1("Fare spesa", "12:30", "13:00");
+    Activity a2("Dentista", "07:05", "07:15");
+    Activity a3("Allenamento", "19:15", "21:15");
 
 
-    Date d1 = Date(30, 9, 2023);
-    Date d2 = Date(28, 2, 2024);
+    Date d1(30, 9, 2023);
+    Date d2(28, 2, 2024);
 
 
 
-    Record r = Record(d1, a2);
+    Register r(d1, a2);
     r.addActivity(d1, a1);
 
     r.addActivity(d2, a3);
-    //r.removeActivities(d1);
-    //r.printRecord();
 
 
     initscr();
@@ -109,8 +107,8 @@ int main(){
         printw("Vuoi aggiungere un'altra attività? [Y/n]: ");
         int choice = getch();                                   //ATTENZIONE: variabile choice usata per entrambe le domande
         if (choice == 'Y') {
-            Activity a = Activity("", "", "");
-            Date d = Date(1, 1, 1);
+            Activity a("", "", "");
+            Date d(1, 1, 1);
 
             char descr[25], startTime[8], endTime[8];     //rispettivamente descrizione, tempo inizio e fine della nuova attività da aggiungere
 
@@ -189,7 +187,7 @@ int main(){
                 mvprintw(4, 0, "Vuoi disdire un'attività? [Y/n]: ");
                 choice = getch();
                 if(choice == 'Y'){
-                    Date delD = Date(1, 1, 1);
+                    Date delD(1, 1, 1);
 
                     char day1, day2, mo1, mo2, ye1, ye2, ye3, ye4;
                     mvprintw(8, 0, "in programma per: ");

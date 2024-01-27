@@ -1,13 +1,13 @@
 #include "gtest/gtest.h"
 
-#include "../Record.h"
+#include "../Register.h"
 
 
 
 TEST(Record, constructorTest){
-Date d = Date(1, 1, 1);
-Activity a = Activity("default", "default", "default");
-Record r = Record(d, a);
+Date d(1, 1, 1);
+Activity a("default", "default", "default");
+Agenda r(d, a);
 
 auto acts = r.getActivities(d);
 auto dates = r.getDates();
@@ -23,7 +23,7 @@ ASSERT_EQ(a, acts[0]);
 TEST(Record, addingTest){
     Date d = Date(1, 1, 1);
     Activity a1 = Activity("default", "default", "default");
-    Record r = Record(d, a1);
+    Agenda r = Agenda(d, a1);
 
     auto a2 = Activity("addingTest", "17:58", "17:59");
 
@@ -38,7 +38,7 @@ TEST(Record, addingTest){
 TEST(Record, removingTest){
     Date d1 = Date(1, 1, 1);
     Activity a1 = Activity("default", "default", "default");
-    Record r = Record(d1, a1);
+    Agenda r = Agenda(d1, a1);
 
     auto d2 = Date(20, 01, 2024);
     auto a2 = Activity("removingTest", "17:58", "17:59");

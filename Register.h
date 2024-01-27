@@ -12,26 +12,23 @@ using namespace std;
 #ifndef UNTITLED_REGISTRO_H
 #define UNTITLED_REGISTRO_H
 
-class Record  {
+class Register {
 public:
-    Record(const Date& date, const Activity& a){
+    Register(const Date& date, const Activity& a){
         activities.insert(make_pair(date, a));
     }
 
-    ~Record()=default;
+    ~Register()=default;
 
 
     void addActivity(const Date& date, const Activity& a) {activities.insert(make_pair(date, a));}
 
 
-    vector<Activity> getActivities(const Date& date);
-    vector <Date> getDates();
+    vector<Activity> getActivities(const Date& date) const;
+    vector <Date> getDates() const;
 
-    void removeActivities(const Date& date);
+    bool removeActivities(const Date& date);
 
-
-    void printDailyActivities(const Date& date);
-    void printRecord();
 
 
 private:
