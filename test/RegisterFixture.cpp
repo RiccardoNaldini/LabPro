@@ -47,4 +47,3 @@ TEST_F(RegisterSuite, TestAdd){
     int size2 = acts2.size();
     ASSERT_EQ(size1, --size2);
 }
-
